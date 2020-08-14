@@ -819,7 +819,7 @@ namespace Dicom.Network
             }
         }
 
-        private async Task PerformDimseAsync(DicomMessage dimse)
+        public virtual async Task PerformDimseAsync(DicomMessage dimse)
         {
             Logger.Info("{logId} <- {dicomMessage}", LogID, dimse.ToString(Options.LogDimseDatasets));
 
