@@ -114,7 +114,7 @@ namespace Dicom
                             .TrimEnd((char)ValueRepresentation.PaddingValue);
 
                 if (_value.Contains('\0'))
-                    _value = _value.Replace("\0", "");
+                    _value = _value.Replace("\0", string.Empty);
 
                 return _value;
             }
