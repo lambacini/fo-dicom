@@ -112,6 +112,10 @@ namespace Dicom
                     _value =
                         Encoding.GetString(Buffer.Data, 0, (int)Buffer.Size)
                             .TrimEnd((char)ValueRepresentation.PaddingValue);
+
+                if (_value.Contains('\0'))
+                    _value = _value.Replace("\0", "");
+
                 return _value;
             }
         }
